@@ -1,0 +1,189 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NOVA AI | Future Intelligence</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="stars" id="stars"></div>
+  <div class="background-glow"></div>
+
+  <div class="app-layout">
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-brand">
+      <div class="sidebar-logo-frame" aria-hidden="true"><img src="nova-logo.png" alt=""></div>
+      <div><strong>NOVA <span>AI</span></strong><small>YOUR AI ASSISTANT</small></div>
+    </div>
+    <button class="new-chat-btn" id="newChatBtn" type="button"><span>＋</span> New chat</button>
+    <div class="sidebar-label">CHATS</div>
+    <button class="conversation-item active" type="button" aria-current="page">
+      <span class="conversation-dot">✦</span><span id="conversationLabel">Current chat</span>
+    </button>
+    <div class="sidebar-spacer"></div>
+    <button class="settings-btn" id="settingsBtn" type="button"><span aria-hidden="true">⚙</span> Settings</button>
+    <div class="sidebar-status"><span class="status-dot"></span> NOVA is ready</div>
+  </aside>
+  <div class="main-shell">
+  <header class="navbar">
+    <button class="sidebar-toggle" id="sidebarToggle" type="button" aria-label="Toggle sidebar">☰</button>
+    <div class="brand">
+      <div class="brand-icon">✦</div>
+      <div>
+        <h2>NOVA<span> AI</span></h2>
+        <small>YOUR INTELLIGENT COMPANION</small>
+      </div>
+    </div>
+
+    <div class="system-status">
+      <span class="status-dot"></span>
+      ALL SYSTEMS ONLINE
+    </div>
+  </header>
+
+  <main class="container">
+
+    <section class="welcome">
+      <div class="tag">✧ NEXT GENERATION ARTIFICIAL INTELLIGENCE</div>
+
+      <div class="orb-area">
+        <div class="orbit orbit-one"></div>
+        <div class="orbit orbit-two"></div>
+        <div class="orbit orbit-three"></div>
+
+        <div class="core">
+          <div class="core-light">N</div>
+        </div>
+
+        <div class="orbit-dot dot-one"></div>
+        <div class="orbit-dot dot-two"></div>
+      </div>
+
+      <h1>HELLO, I'M <span>NOVA</span></h1>
+      <p class="description">
+        Your intelligent AI assistant. Ask questions,
+        explore ideas and discover the future of technology.
+      </p>
+
+      <div class="features">
+        <div>✦ SMART</div>
+        <div>◉ INTERACTIVE</div>
+        <div>⚡ INNOVATIVE</div>
+      </div>
+    </section>
+
+    <section class="assistant-panel">
+
+      <div class="panel-header">
+        <div class="panel-title">
+          <span class="mini-icon">✦</span>
+          <div>
+            <h3>NOVA INTERFACE</h3>
+            <small>ARTIFICIAL INTELLIGENCE TERMINAL</small>
+          </div>
+        </div>
+        <span class="live">● ACTIVE</span>
+      </div>
+
+      <div class="chat-area" id="chat">
+        <div class="message bot">
+          <div class="bot-icon">N</div>
+          <div class="message-content">
+            <small>NOVA AI</small>
+            <p>
+              Greetings, Explorer! 👋<br>
+              I am NOVA, your intelligent assistant.
+              Ask me anything and let's explore the world of AI!
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="quick-title">TRY ASKING NOVA</div>
+
+      <div class="quick-actions">
+        <button onclick="quickAsk('What is Artificial Intelligence?')">
+          🤖 What is AI?
+        </button>
+        <button onclick="quickAsk('Tell me a science fact')">
+          🧪 Science facts
+        </button>
+        <button onclick="quickAsk('Tell me a joke')">
+          😄 Tell a joke
+        </button>
+        <button onclick="quickAsk('What can you do?')">
+          ✨ Your abilities
+        </button>
+      </div>
+
+      <div class="input-wrapper">
+        <button id="micBtn" class="mic-btn" title="Voice input">🎙</button>
+        <input id="userInput" type="text"
+          placeholder="Ask NOVA anything..."
+          autocomplete="off">
+        <button id="imageBtn" class="image-btn" type="button" title="Create an image" aria-label="Create an image">▧</button>
+        <button id="sendBtn" class="send-btn">➤</button>
+      </div>
+
+      <div class="input-hint">
+        PRESS ENTER TO SEND · SPEAK TO NOVA USING THE MIC
+      </div>
+
+    </section>
+
+    <footer>
+      <p>POWERED BY CURIOSITY. DESIGNED FOR THE FUTURE.</p>
+      <p class="footer-name">NOVA AI © 2026</p>
+    </footer>
+
+  </main>
+  </div>
+  <button class="sidebar-backdrop" id="sidebarBackdrop" type="button" aria-label="Close sidebar"></button>
+  </div>
+
+  <div class="settings-backdrop" id="settingsBackdrop" hidden>
+    <section class="settings-dialog" role="dialog" aria-modal="true" aria-labelledby="settingsTitle">
+      <header class="settings-header">
+        <div><h2 id="settingsTitle">Settings</h2><p>Customize how NOVA looks.</p></div>
+        <button class="settings-close" id="settingsClose" type="button" aria-label="Close settings">×</button>
+      </header>
+      <div class="settings-content">
+        <label class="setting-row" for="settingsTheme">
+          <span><strong>Theme</strong><small>Choose a light or dark workspace.</small></span>
+          <select id="settingsTheme"><option value="light">Light</option><option value="dark">Dark</option></select>
+        </label>
+        <label class="setting-row" for="settingsAccent">
+          <span><strong>Accent color</strong><small>Change NOVA's highlight color.</small></span>
+          <select id="settingsAccent">
+            <option value="#5555d6">Violet</option>
+            <option value="#1478d4">Ocean blue</option>
+            <option value="#0b8f82">Teal</option>
+            <option value="#c44d83">Rose</option>
+          </select>
+        </label>
+        <label class="setting-row size-setting" for="settingsTextSize">
+          <span><strong>Reply text size</strong><small><span id="settingsTextSizeValue">15</span> px</small></span>
+          <input id="settingsTextSize" type="range" min="13" max="19" value="15">
+        </label>
+        <label class="setting-row voice-setting" for="settingsVoice">
+          <span><strong>Speak replies aloud</strong><small>Uses Indian English or Hindi voices available on your device.</small></span>
+          <input id="settingsVoice" type="checkbox" checked>
+        </label>
+        <label class="setting-row" for="settingsSpeechLanguage">
+          <span><strong>Microphone language</strong><small>Choose the language you speak.</small></span>
+          <select id="settingsSpeechLanguage">
+            <option value="en-IN">English</option>
+            <option value="hi-IN">Hindi</option>
+          </select>
+        </label>
+      </div>
+      <footer class="settings-footer"><button id="settingsReset" type="button">Reset appearance</button></footer>
+    </section>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
